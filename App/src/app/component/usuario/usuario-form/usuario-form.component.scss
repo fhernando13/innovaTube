@@ -1,0 +1,23 @@
+.example-card {
+    max-width: 600px;
+    margin-top: 24px;
+    background: linear-gradient(to top, #ffffff, #000a61 80% ) no-repeat;
+  }
+
+.example-full-width {
+  width: 100%;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.divider {
+    background: #f1eeee;
+}
+
+.title {
+  color:#f1eeee;
+}
