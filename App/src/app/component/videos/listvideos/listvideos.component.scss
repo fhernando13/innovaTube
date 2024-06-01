@@ -1,11 +1,16 @@
 .example-card {
     
-    margin-top: 15px;
-    max-width: 367px;
-    background: linear-gradient(to top, #ffffff, #000a61 80% ) no-repeat;
-    color: #ffffff;
-  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 370px;
+  max-width: 370px;
+  margin-left: 30px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
 
-.image{
-    display: flex;
+#image{
+  display: flex;
+  justify-content: center;
 }

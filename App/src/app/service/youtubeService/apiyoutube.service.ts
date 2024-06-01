@@ -11,7 +11,7 @@ export class ApiyoutubeService {
 
   apikey = environment.apikey;
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
-  private playlist = 'UCfIXdjDQH9Fau7y99_Orpjw';
+  private channelId = 'UCiMhD4jzUqG-IgPzUmmytRQ';
 
   constructor(private http: HttpClient) { }
 
@@ -21,9 +21,9 @@ export class ApiyoutubeService {
 
     const parametros = new HttpParams()
     .set('key', this.apikey)
-    .set('channelId', this.playlist)
+    .set('channelId', this.channelId)
     .set('part', 'snippet')
-    .set('maxResults', 1)
+    .set('maxResults', 6)
     
     
     return this.http.get<any>( url, { params:parametros })

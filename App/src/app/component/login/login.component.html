@@ -23,10 +23,10 @@
                 <mat-label><mat-icon> mail_outline</mat-icon> Enter your email</mat-label>
                 <input type="text" matInput formControlName="Email">              
                 <mat-error *ngIf="Email.hasError('required')">
-                  Email is <strong>required</strong>                                         
+                  Email es <strong>obligatorio</strong>                                         
                 </mat-error>
                 <mat-error *ngIf="!Email.hasError('emailPattern')">
-                  Email must be <strong>valid!!!</strong>                                         
+                  Email debe ser <strong>valido!!!</strong>                                         
                 </mat-error>
               </mat-form-field>
               <!-- PASSWORD -->
@@ -40,7 +40,7 @@
                 </mat-icon>   
                   <!-- Error required -->
                   <mat-error *ngIf="Password.hasError('required')">
-                    Email is <strong>required</strong>                                         
+                    Password es <strong>obligatorio</strong>                                         
                   </mat-error>    
                   <!-- Error min lenght -->
                 <mat-error *ngIf="Password.hasError('minLength')"><strong>Min 6 </strong>characters!!!</mat-error>
@@ -53,15 +53,14 @@
                     <button mat-raised-button 
                         color="primary" 
                         class="buttonlogin"
-                        matTooltip="Click to into app"
+                        matTooltip="ingresa a la app"
                         matTooltipClass="info-button-login"
                         [disabled]="!loginForm.valid" >LOGGIN</button>
                   </div>
                   <div class="col-6">
                     <button mat-raised-button 
-                        color="accent" 
-                        class="buttonlogin"
-                        matTooltip="Click to into app"
+                        color="warn" 
+                        matTooltip="registrarte en la app"
                         matTooltipClass="registrate"
                         [routerLink]="['/formUsuario']"
                         >REGISTRO</button>
