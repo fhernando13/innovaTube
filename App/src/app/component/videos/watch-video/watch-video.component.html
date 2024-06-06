@@ -1,0 +1,9 @@
+<div mat-dialog-content>
+    <div class="row">
+        <iframe class="e2e-iframe-trusted-src" width="640" height="390" [src]="urlSafe" title="trusted video url"></iframe>       
+    </div>            
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">CERRAR</button>
+    <button mat-button [mat-dialog-close]="true">OK</button>
+</div>

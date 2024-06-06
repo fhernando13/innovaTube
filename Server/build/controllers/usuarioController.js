@@ -18,7 +18,7 @@ class UsuarioController {
     //lista de usuarios
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query("SELECT * FROM store.Usuarios ", (error, results, fields) => {
+            yield database_1.default.query("SELECT * FROM innovadb.Usuarios ", (error, results, fields) => {
                 if (error) {
                     console.log(error);
                     return res.status(400).send('error');
@@ -30,7 +30,7 @@ class UsuarioController {
     //Usuarios por rol
     getall(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query("SELECT Idusuario, Nombre, ApePaterno, Email, Estatus, Rolusuario FROM store.Usuarios u INNER JOIN store.Roles r ON u.Rolid = r.Idrol ", (error, results, fields) => {
+            yield database_1.default.query("SELECT Idusuario, Nombre, ApePaterno, Email, Estatus, Rolusuario FROM innovadb.Usuarios u INNER JOIN innovadb.Roles r ON u.Rolid = r.Idrol ", (error, results, fields) => {
                 if (error) {
                     console.log(error);
                     return res.status(400).send('error');

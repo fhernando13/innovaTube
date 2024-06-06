@@ -1,11 +1,6 @@
 <mat-toolbar >
     <mat-toolbar id="">
-      <!-- <img src="./assets/angular1.png" alt="Logo" width="45" height="45" class="d-inline-block align-text-top"> -->         
-
-        <button mat-button [matMenuTriggerFor]="adminMenu" *ngIf="role === '1'" matTooltip="Solo usuarios admin">Usuarios</button>
-        <mat-menu #adminMenu="matMenu" yPosition="below">
-          <button mat-menu-item [routerLink]="['/listaUsuario']">Lista</button>
-        </mat-menu>      
+      <img src="./assets/images/storeMEAN.png" alt="Logo" width="45" height="45" class="d-inline-block align-text-top">         
         
     </mat-toolbar>
     <button mat-raised-button 
@@ -14,12 +9,22 @@
             matTooltip="My profile"
             >{{unique_name}}</button>
       <mat-menu #menu="matMenu">
+
         <button mat-menu-item
           matTooltip="{{modetheme}}">
           <mat-icon>{{icon}}</mat-icon>
           <span class="example-spacer"></span>
         <mat-slide-toggle (ngModelChange)="onChange($event)" [ngModel]="isDarkThemeActive" >{{mode}}</mat-slide-toggle>
-        </button>                
+        </button>  
+
+        <button mat-menu-item
+          matTooltip="solo admin"
+          [routerLink]="['/listaUsuario']"
+          *ngIf="role === '1'">
+          <mat-icon>supervisor_account</mat-icon>
+          <span class="example-spacer">Usuarios</span>        
+        </button> 
+
         <button 
           mat-menu-item 
           matTooltip="Salir de la aplicaión"
@@ -27,6 +32,7 @@
           <mat-icon>exit_to_app</mat-icon>
           <span>Logout</span>
       </button>
+
       </mat-menu>
               
 </mat-toolbar>

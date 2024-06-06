@@ -5,47 +5,48 @@
             <div class="container-fostrap">
                 <div class="content">
                     <div class="container">                        
-                        <div class="row">                            
-                            <!--  -->
-                            <mat-card class="example-card" *ngFor="let video of videos" > 
-                                <mat-card-header>                    
-                                    <mat-card-title>{{video.snippet.channelTitle}}</mat-card-title>
-                                  </mat-card-header>                                               
-                                <mat-card-content>
-                                    <div id="image" >
-                                        <img [src]="video.snippet.thumbnails.medium.url" alt="..." >                                        
-                                    </div>                                       
-                                </mat-card-content>
-                                <mat-card-actions>
+                        <div class="row" >                            
+                            <!--  -->                                                        
+                                <mat-card class="example-card" *ngFor="let video of videos" >                                     
+                                    <mat-card-header>                    
+                                        <mat-card-title>{{video.snippet.channelTitle}}</mat-card-title>
+                                      </mat-card-header>                                               
+                                    <mat-card-content>
+                                        <div id="image" >
+                                            <img [src]="video.snippet.thumbnails.medium.url" alt="..." (click)="openVideo(video.id.videoId)">                                        
+                                        </div>                                       
+                                    </mat-card-content>
+                                    <mat-card-actions>
+
+                                        <div class="container">                                        
+                                            <div class="row" >
+                                                <div class="col-12">
+                                                    <mat-card-title>{{video.snippet.title | titlecase}}</mat-card-title>
+
+                                                </div>
+                                                <mat-divider class="divider"></mat-divider>
+                                                <div class="col-12" >
+                                                    <mat-card-subtitle id="row">{{video.snippet.publishTime | date}}</mat-card-subtitle>                                                
+                                                </div>
+                                               <!-- <div class="col-12 ">
+                                                    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="openVideo(video.id.videoId)">
+                                                        
+                                                    <mat-icon >plus_one</mat-icon>
+                                                </button>
+                                                </div>    -->                        
+                                            </div>                        
+                                        </div>                                        
+                                    </mat-card-actions>
                                     
-                                    <div class="container">                                        
-                                        <div class="row" >
-                                            <div class="col-12">
-                                                <mat-card-title>{{video.snippet.title | titlecase}}</mat-card-title>
-                                                
-                                            </div>
-                                            <mat-divider class="divider"></mat-divider>
-                                            <div class="col-12" >
-                                                <mat-card-subtitle id="row">{{video.snippet.publishTime | date}}</mat-card-subtitle>                                                
-                                            </div>
-                                            <div class="col-12 ">
-                                                <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="getId(video.snippet.id)">
-                                                 <!--   -->
-                                                <mat-icon>plus_one</mat-icon>
-                                            </button>
-                                            </div>                            
-                                        </div>                        
-                                    </div>                                        
-                                </mat-card-actions>
-                              </mat-card>
+                                </mat-card>
+                           
                             <!--  -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
             
         </div>
-    </div>
+</div>
 

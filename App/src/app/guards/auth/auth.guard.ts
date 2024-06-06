@@ -13,7 +13,7 @@ export const authGuard: CanActivateFn = () => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Debes estar iniciar sesión!'
+      text: 'Debes iniciar sesión o registrate!'
     });
     routerService.navigate(['/login']);
     return false

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiyoutubeService } from 'src/app/service/youtubeService/apiyoutube.service';
-
-//Sweetalert
-import Swal from 'sweetalert2'
-import { Element } from '@angular/compiler';
+import { MatDialog } from '@angular/material/dialog';
+import { WatchVideoComponent } from '../watch-video/watch-video.component';
 
 @Component({
   selector: 'app-listvideos',
@@ -12,29 +11,34 @@ import { Element } from '@angular/compiler';
 })
 export class ListvideosComponent implements OnInit {
 
-
-  videos: any =[]
+  videos: any =[];
+  videoId = '';
   
-  constructor( private youtubeService: ApiyoutubeService){
+  constructor( private youtubeService: ApiyoutubeService,
+               private router: Router,
+               private activatedRoute: ActivatedRoute,
+               public dialog: MatDialog){
    
   }
 
   ngOnInit(): void {
-    this.cargarVideos();
+    this.listVideos();
   }
 
-  cargarVideos() {        
+  listVideos() {        
     this.youtubeService.getVideos().subscribe({      
-      next: (data) => {console.log(data),
-                      this.videos = data.items                     
-                    },
+      next: (data) => { this.videos = data.items },
       error: (err) => console.log(err),
     })
          
   }
 
-  getId(id:string){
-    console.log(id);
-  }
+  openVideo(idVideo:string){
+    console.log(idVideo);
+    this.videoId =idVideo;
+    const dialogRef = this.dialog.open(WatchVideoComponent, {
+      data: {videoId:this.videoId}
+    })
+  }  
      
 }

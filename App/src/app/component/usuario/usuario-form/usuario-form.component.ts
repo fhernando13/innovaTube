@@ -23,7 +23,7 @@ export class UsuarioFormComponent implements OnInit {
       Nombre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       ApePaterno: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       Nickname: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
-      Email: new FormControl('', [Validators.required, Validators.minLength(15), Validators.maxLength(50), Validators.pattern(this.emailPattern)]),
+      Email: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(50), Validators.pattern(this.emailPattern)]),
       Estatus: new FormControl(1),
       RolId: new FormControl(2),         
       Password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),

@@ -22,7 +22,7 @@ export class LoginComponent {
   createFormGroup() {
     return new FormGroup({      
       Email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
-      Password: new FormControl('', [Validators.maxLength(15), Validators.minLength(6), Validators.required])
+      Password: new FormControl('', [Validators.maxLength(12), Validators.minLength(6), Validators.required])
     });
   }
 

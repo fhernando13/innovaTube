@@ -15,10 +15,10 @@ import { adminGuard } from './guards/admin/admin.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'listaUsuario',   component: UsuarioListComponent },
+  { path: 'listaUsuario', canActivate:[authGuard, adminGuard],  component: UsuarioListComponent },
   { path: 'formUsuario',  component: UsuarioFormComponent },
-  { path: 'updateUsuario/:Idusuario',  component: UsuarioUpdateComponent },
-  { path: 'listvideos',  component: ListvideosComponent },
+  { path: 'updateUsuario/:Idusuario', canActivate:[authGuard, adminGuard], component: UsuarioUpdateComponent },
+  { path: 'listvideos', canActivate:[authGuard], component: ListvideosComponent }
 ];
 
 @NgModule({

@@ -7,7 +7,7 @@ class UsuarioController{
 
     //lista de usuarios
     public async  list (req: Request, res: Response){
-        await pool.query("SELECT * FROM store.Usuarios ", (error, results, fields) => { 
+        await pool.query("SELECT * FROM innovadb.Usuarios ", (error, results, fields) => { 
             if(error) { 
                 console.log(error); 
                 return res.status(400).send('error'); 
@@ -18,7 +18,7 @@ class UsuarioController{
 
     //Usuarios por rol
     public async getall (req: Request, res: Response){
-        await pool.query("SELECT Idusuario, Nombre, ApePaterno, Email, Estatus, Rolusuario FROM store.Usuarios u INNER JOIN store.Roles r ON u.Rolid = r.Idrol ", (error, results, fields) => { 
+        await pool.query("SELECT Idusuario, Nombre, ApePaterno, Email, Estatus, Rolusuario FROM innovadb.Usuarios u INNER JOIN innovadb.Roles r ON u.Rolid = r.Idrol ", (error, results, fields) => { 
             if(error) { 
                 console.log(error); 
                 return res.status(400).send('error'); 

@@ -4,9 +4,6 @@ import { Router } from '@angular/router';
 import { UserAppService } from '../../service/user-app-service/user-app.service';
 import { LoginService } from '../../service/loginService/login.service';
 
-//Sweetalert
-import Swal from 'sweetalert2'
-
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',

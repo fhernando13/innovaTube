@@ -21,7 +21,7 @@ export const adminGuard: CanActivateFn = () => {
       title: 'Oops...',
       text: 'No tienes permisos para estar aqui!!!'
     });
-    routerService.navigate(['/listaSimpleProducto']);
+    routerService.navigate(['/listvideos']);
     return false
   }
   return true;

@@ -20,7 +20,7 @@ export class UsuarioListComponent implements OnInit {
   suburbs: any = [];
   id_user: any;
   title="usuarios"
-  displayedColumns = ['Id','Nombre','Nickname','Status','Role','Options'];
+  displayedColumns = ['Id','Nombre', 'Apellido','Nickname','Status','Role','Options'];
   dataSource = new MatTableDataSource();
   selectedUser:  any = [];
 
@@ -50,7 +50,7 @@ export class UsuarioListComponent implements OnInit {
   async listUsers(){
     await this.usuarioService.getAllUsersByRole().subscribe({
      next: res =>{
-       this.dataSource.data = res, console.log(res)
+       this.dataSource.data = res
      },
      error: err =>{console.log(err)}}
    );

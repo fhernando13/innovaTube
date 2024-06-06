@@ -14,18 +14,30 @@
                 <br>
                     <!-- Content -->
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-6">
                             <mat-form-field class="example-full-width">
                                 <mat-label>Nombre</mat-label>
-                                <input type="text" matInput placeholder="Agrega el nombre" formControlName="NombreUsuario">
+                                <input type="text" matInput placeholder="Agrega el nombre" formControlName="Nombre">
+                            </mat-form-field>                             
+                        </div>
+                        <div class="col-6">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Apellido</mat-label>
+                                <input type="text" matInput placeholder="Agrega el apellido" formControlName="ApePaterno">
                             </mat-form-field>                             
                         </div>                                              
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-6">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Nickname</mat-label>
+                                <input type="text" matInput placeholder="Agrega el nickname" formControlName="Nickname">
+                            </mat-form-field>                             
+                        </div> 
+                        <div class="col-6">
                             <mat-form-field class="example-full-width">
                                 <mat-label>Correo</mat-label>
-                                <input type="text" matInput placeholder="Agrega el correo" formControlName="CorreoUsuario">
+                                <input type="text" matInput placeholder="Agrega el email" formControlName="Email">
                             </mat-form-field>                             
                         </div>                                              
                     </div>
@@ -33,7 +45,7 @@
                         <div class="col-6" >                             
                             <mat-form-field>
                                 <mat-label>Estatus</mat-label>
-                                <mat-select placeholder="Elije estatus" formControlName="EstatusUsuario">                                
+                                <mat-select placeholder="Elije estatus" formControlName="Estatus">                                
                                     <mat-option [value]="op.value" *ngFor="let op of option">{{op.key}}</mat-option>                                  
                                 </mat-select>
                             </mat-form-field>                                   

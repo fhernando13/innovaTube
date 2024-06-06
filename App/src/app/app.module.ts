@@ -36,7 +36,7 @@ import { UsuarioFormComponent } from './component/usuario/usuario-form/usuario-f
 import { UsuarioListComponent } from './component/usuario/usuario-list/usuario-list.component';
 import { UsuarioUpdateComponent } from './component/usuario/usuario-update/usuario-update.component';
 import { ListvideosComponent } from './component/videos/listvideos/listvideos.component';
-
+import { WatchVideoComponent } from './component/videos/watch-video/watch-video.component';
 
 
 @NgModule({
@@ -48,6 +48,7 @@ import { ListvideosComponent } from './component/videos/listvideos/listvideos.co
     UsuarioListComponent,
     UsuarioUpdateComponent,
     ListvideosComponent,
+    WatchVideoComponent
   ],
   imports: [
     ReactiveFormsModule,

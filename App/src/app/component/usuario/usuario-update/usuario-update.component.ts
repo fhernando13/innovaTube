@@ -19,10 +19,12 @@ export class UsuarioUpdateComponent implements OnInit {
   createFormGroup() {
     return new FormGroup({
       Idusuario: new FormControl(0),
-      NombreUsuario: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
-      CorreoUsuario: new FormControl('',[Validators.required]),
-      EstatusUsuario: new FormControl(''),
-      PasswordUsuario: new FormControl(this.passuser),
+      Nombre: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+      ApePaterno: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+      Nickname: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+      Email: new FormControl('',[Validators.required]),
+      Estatus: new FormControl(''),
+      Password: new FormControl(this.passuser),
       RolId: new FormControl('',[Validators.required]),
     });
   }
@@ -45,24 +47,28 @@ export class UsuarioUpdateComponent implements OnInit {
       this.userForm = this.createFormGroup()
     }
 
-  get NombreUsuario() {
-  return this.userForm.get('NombreUsuario');
+  get Nombre() {
+    return this.userForm.get('Nombre');
   }
 
-  get CorreoUsuario() {
-  return this.userForm.get('CorreoUsuario');
+  get Nickname() {
+    return this.userForm.get('Nickname');
   }
 
-  get EstatusUsuario() {
-  return this.userForm.get('EstatusUsuario');
+  get ApePaterno() {
+    return this.userForm.get('ApePaterno');
   }
 
-  get PasswordUsuario() {
-  return this.userForm.get('PasswordUsuario');
+  get Email() {
+    return this.userForm.get('CorreoUsuario');
+  }
+
+  get Estatus() {
+    return this.userForm.get('Estatus');
   }
 
   get RolId() {
-  return this.userForm.get('RolId');
+    return this.userForm.get('RolId');
   }
 
   ngOnInit(){
@@ -79,20 +85,21 @@ export class UsuarioUpdateComponent implements OnInit {
 
   getUpdateUser(){
     const iduser = <string>this.activedRouted.snapshot.params["Idusuario"];
-    console.log(iduser)
+    // console.log(iduser)
     if(iduser){
       const res:any = this.usuarioService.getUser(iduser).subscribe(
       {        
         next: data=>(this.userForm.setValue(data[0]),
               ({
-                nombreUsuario: res.NombreUsuario,
-                CorreoUsuario: res.CorreoUsuario,
-                EstatusUsuario: res.EstatusUsuario,
-                PasswordUsuario: res.PasswordUsuario,
+                Nombre: res.Nombre,
+                ApePaterno: res.ApePaterno,
+                Nickname: res.Nickname,
+                Email: res.Email,
+                Estatus: res.Estatus,
+                Password: res.Password,
                 RolId: res.rolId,
               }),
-               this.passuser = data.PasswordUsuario,
-              console.log(data)
+               this.passuser = data.Password
             ),
         error: err=>(console.log(err)),
       })
