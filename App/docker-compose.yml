@@ -1,0 +1,12 @@
+services:
+  innovatube:
+    container_name: innovatube
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "80:80"
+    expose:
+      - 80
+    tty: true
+    restart: unless-stopped

@@ -23,7 +23,7 @@ export class ApiyoutubeService {
     .set('key', this.apikey)
     .set('channelId', this.channelId)
     .set('part', 'snippet')
-    .set('maxResults', 1)
+    .set('maxResults', 15)
     
     
     return this.http.get<any>( url, { params:parametros })

@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  serverexpress:
+    container_name: express
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "3000:3000"
+    tty: true
+    restart: unless-stopped

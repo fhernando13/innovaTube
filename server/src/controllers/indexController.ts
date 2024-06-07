@@ -3,7 +3,7 @@ import {Request, Response} from 'express';
 class IndexController{
 
     index (req: Request, res: Response){
-        res.json({'message':'Store'})
+        res.json({'message':'InnovaTube'})
     }
 
 };

@@ -19,7 +19,7 @@ class Server {
     }
 
     config(): void{
-        this.app.set('port', process.env.PORT || 3500);
+        this.app.set('port', process.env.PORT || 3000);
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json());

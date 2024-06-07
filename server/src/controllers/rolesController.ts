@@ -5,7 +5,7 @@ import pool from '../database';
 class RolesController{
 
     public list (req: Request, res: Response){
-        pool.query("SELECT * FROM store.Roles ", (error, results, fields) => { 
+        pool.query("SELECT * FROM innovadb.Roles ", (error, results, fields) => { 
             if(error) { 
                 console.log(error); 
                 return res.status(400).send('error'); 
@@ -16,7 +16,7 @@ class RolesController{
 
     public getOne (req: Request, res: Response){
         const {id} = req.params;
-        pool.query("SELECT * FROM store.Roles where Idrol = ?", [id], (error, results, fields) => { 
+        pool.query("SELECT * FROM innovadb.Roles where Idrol = ?", [id], (error, results, fields) => { 
             if(error) { 
                 console.log(error); 
             }if(results == false) {
@@ -32,7 +32,7 @@ class RolesController{
         const data={
             Rolusuario
         };
-        pool.query("INSERT INTO store.Roles set ?",[data], (error, results, fields) => { 
+        pool.query("INSERT INTO innovadb.Roles set ?",[data], (error, results, fields) => { 
             if(error) { 
                 console.log(error); 
                 return res.status(400).send('error'); 
@@ -44,7 +44,7 @@ class RolesController{
     public delete(req: Request, res:Response){
         const {id} = req.params;
         console.log(id);
-        pool.query("SELECT * FROM store.Roles where Idrol = ?", [id], (error, results, fields) => { 
+        pool.query("SELECT * FROM innovadb.Roles where Idrol = ?", [id], (error, results, fields) => { 
             if(error){
                 console.log(error); 
                 return res.status(400).send('error'); 
@@ -52,7 +52,7 @@ class RolesController{
                 console.log('Rol no existe');
                 return res.status(500).send('Rol no existe');
             }else{
-                pool.query("DELETE FROM store.Roles where Idrol = ?", [id]);
+                pool.query("DELETE FROM innovadb.Roles where Idrol = ?", [id]);
                 return res.status(200).send('Rol borrado');
             }
         });
@@ -61,7 +61,7 @@ class RolesController{
     public update(req: Request, res:Response){
         const {id} = req.params;
         console.log(id);
-        pool.query("SELECT * FROM store.Roles where Idrol = ?", [id], (error, results, fields) => { 
+        pool.query("SELECT * FROM innovadb.Roles where Idrol = ?", [id], (error, results, fields) => { 
             if(error){
                 console.log(error); 
                 return res.status(400).send('error'); 
@@ -70,7 +70,7 @@ class RolesController{
                 return res.status(500).send('Rol no existe');
             }else{
                 const { Rol } = req.body;
-                pool.query("UPDATE store.Roles SET ? WHERE Idrol=?", [req.body, id]);
+                pool.query("UPDATE innovadb.Roles SET ? WHERE Idrol=?", [req.body, id]);
                 return res.status(200).send('Rol actualizado');
             }
         });

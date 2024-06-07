@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class IndexController {
     index(req, res) {
-        res.json({ 'message': 'Store' });
+        res.json({ 'message': 'InnovaTube' });
     }
 }
 ;
