@@ -1,9 +1,12 @@
 services:
   innovatube:
     container_name: innovatube
-    build: 
-      context: .
-      dockerfile: Dockerfile
+    # construir imagen 
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
+    # o desde el docker hub
+    image: fhers13/innovatube:v1
     ports:
     - "80:80"
     expose:

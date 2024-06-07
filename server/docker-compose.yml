@@ -2,9 +2,12 @@ version: '3.1'
 services:
   serverexpress:
     container_name: express
-    build: 
-      context: .
-      dockerfile: Dockerfile
+    # construir imagen
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
+    # o desde el docker hub
+    image: fhers13/server-serverexpress:v1
     ports:
     - "3000:3000"
     tty: true
